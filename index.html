@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alisha Unni | IT Assistant & Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #5e35b1;
+            --primary-light: #7e57c2;
+            --secondary: #ff7043;
+            --dark: #263238;
+            --light: #f5f5f5;
+            --gray: #b0bec5;
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            position: relative;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        
+        .hero h1 span {
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(94, 53, 177, 0.2);
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: translateY(-10px);
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary);
+            bottom: -50px;
+            right: -50px;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(94, 53, 177, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(94, 53, 177, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .skill {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .skill:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            text-align: right;
+            padding-right: 3rem;
+            padding-left: 0;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            padding-left: 3rem;
+            padding-right: 0;
+        }
+        
+        .timeline-content {
+            width: calc(50% - 2rem);
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content p.company {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-content ul {
+            list-style-type: none;
+        }
+        
+        .timeline-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 4px solid var(--primary);
+        }
+        
+        /* Services/Skills Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(94, 53, 177, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .project-info p.date {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(94, 53, 177, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h3 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        /* Tablet View (768px - 992px) */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 3rem 0;
+            }
+            
+            .hero-image {
+                order: -1;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-container {
+                justify-content: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 6rem);
+                margin-left: 4rem;
+                text-align: left;
+                padding: 1.5rem;
+            }
+            
+            .timeline-dot {
+                left: 2rem;
+            }
+            
+            .services-grid, 
+            .projects-grid,
+            .contact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        /* Mobile View (up to 768px) */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 4rem);
+                margin-left: 3rem;
+            }
+            
+            .project-image {
+                height: 150px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /* Small Mobile View (up to 480px) */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            
+            .skills-container {
+                justify-content: center;
+            }
+            
+            .skill {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .services-grid, 
+            .projects-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Large Desktop View (min-width 1200px) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">ALISHA UNNI</div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>IT Assistant & <span>Software Developer</span></h1>
+                <p>Experienced IT professional with 9+ years in software development, system administration, and IT project management. Passionate about creating efficient solutions and mentoring others in technology.</p>
+                <div class="skills-container">
+                    <div class="skill">Software Development</div>
+                    <div class="skill">System Administration</div>
+                    <div class="skill">Android Development</div>
+                    <div class="skill">Cybersecurity</div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="#contact" class="btn">Contact Me</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/alisha.jpg" alt="Alisha Unni" class="profile-img">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Experienced IT professional with more than 9 years of experience with a strong background in software development, system administration, and IT project management. Seeking a challenging role to utilize technical expertise and problem-solving skills in delivering innovative technology solutions that drive business growth and efficiency.</p>
+                    <p>Fluent in English, Malayalam, and Hindi with excellent communication skills and a passion for mentoring others in technology.</p>
+                </div>
+                <div class="about-skills">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Core Competencies</h3>
+                    <div class="skills-container">
+                        <div class="skill">Software Development</div>
+                        <div class="skill">System Administration</div>
+                        <div class="skill">Network Management</div>
+                        <div class="skill">Technical Support</div>
+                        <div class="skill">Cybersecurity</div>
+                        <div class="skill">Data Protection</div>
+                        <div class="skill">Database Management</div>
+                        <div class="skill">Agile Methodologies</div>
+                        <div class="skill">Project Management</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience" style="background: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">03/2024 - Present</span>
+                        <h3>Assistant Professor – C.S.E Department</h3>
+                        <p class="company">Mentor Academy for Entrepreneurship Innovation & Technology</p>
+                        <ul>
+                            <li>Deliver lectures on advanced computer science topics, including AI, machine learning, and cloud computing</li>
+                            <li>Supervise and guide students in capstone projects related to software development and innovation</li>
+                            <li>Conduct research in emerging technologies and publish papers in recognized journals</li>
+                            <li>Organize and lead academic workshops, hackathons, and tech-driven entrepreneurial events</li>
+                            <li>Mentor students on career paths, entrepreneurship, and innovation in technology</li>
+                            <li>Collaborate with industry partners to create real-world learning opportunities and internships</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">08/2022 - 02/2024</span>
+                        <h3>Freelancer - Web Development & Test Engineer</h3>
+                        <ul>
+                            <li>Designed, developed, and maintained dynamic websites and web apps</li>
+                            <li>Conducted rigorous testing for functionality, performance, and security</li>
+                            <li>Collaborated with clients to customize solutions tailored to their needs</li>
+                            <li>Managed full-cycle software development projects from conception to deployment</li>
+                            <li>Provided training and support to clients for managing web applications</li>
+                            <li>Introduced automation testing tools, enhancing project efficiency by 30%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">02/2022 - 06/2022</span>
+                        <h3>Android Developer</h3>
+                        <p class="company">Agaze Technologies</p>
+                        <ul>
+                            <li>Developed and deployed user-friendly Android applications for business and consumer use</li>
+                            <li>Integrated APIs and third-party services to enhance app functionality and user experience</li>
+                            <li>Worked with UX/UI designers to create seamless, engaging interfaces</li>
+                            <li>Debugged and optimized code for improved app performance and reliability</li>
+                            <li>Participated in code reviews and collaborative development to ensure high standards</li>
+                            <li>Contributed to Agile development processes and met project timelines effectively</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">08/2016 - 01/2022</span>
+                        <h3>System Administrator</h3>
+                        <p class="company">Manhara Constructions India Private Ltd</p>
+                        <ul>
+                            <li>Managed and maintained the company's IT infrastructure, including servers, networks, and security systems</li>
+                            <li>Implemented security protocols and regular audits to protect data integrity and network security</li>
+                            <li>Provided technical support and troubleshooting for hardware and software issues</li>
+                            <li>Led IT projects, including system upgrades, backups, and cloud migration</li>
+                            <li>Trained staff on new technologies and best practices for IT security</li>
+                            <li>Ensured compliance with IT policies and standards, enhancing overall system efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">01/2015 - 07/2016</span>
+                        <h3>Junior Software Programmer</h3>
+                        <p class="company">SoftEn Technologies | ZyncSofts</p>
+                        <ul>
+                            <li>Assisted in developing and maintaining software applications based on client requirements</li>
+                            <li>Wrote clean, scalable code under the guidance of senior developers</li>
+                            <li>Debugged, tested, and documented software applications to ensure functionality</li>
+                            <li>Collaborated with cross-functional teams to integrate software solutions</li>
+                            <li>Participated in Agile development meetings, contributing ideas and suggestions</li>
+                            <li>Provided support and troubleshooting for existing applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming Languages</h3>
+                    <div class="skills-container">
+                        <div class="skill">Java</div>
+                        <div class="skill">C</div>
+                        <div class="skill">Kotlin</div>
+                        <div class="skill">PHP</div>
+                        <div class="skill">HTML</div>
+                        <div class="skill">JavaScript</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Development</h3>
+                    <div class="skills-container">
+                        <div class="skill">Android Development</div>
+                        <div class="skill">Web Development</div>
+                        <div class="skill">Agile Methodologies</div>
+                        <div class="skill">Testing</div>
+                        <div class="skill">Debugging</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>System Administration</h3>
+                    <div class="skills-container">
+                        <div class="skill">Windows</div>
+                        <div class="skill">Linux</div>
+                        <div class="skill">Mac</div>
+                        <div class="skill">Networking</div>
+                        <div class="skill">Security</div>
+                        <div class="skill">Database Management</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Other Skills</h3>
+                    <div class="skills-container">
+                        <div class="skill">Microsoft Office</div>
+                        <div class="skill">Adobe Photoshop</div>
+                        <div class="skill">Project Management</div>
+                        <div class="skill">Technical Support</div>
+                        <div class="skill">Mentoring</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" style="background: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background: #5e35b1;">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Campus Savings System</h3>
+                        <p class="date">Dec 2009 - Mar 2010</p>
+                        <p>Designed and developed a campus savings system for students using Java</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background: #7e57c2;">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Lawyer-Client Communication Platform</h3>
+                        <p class="date">Dec 2010 - Mar 2011</p>
+                        <p>Created a lawyer-client communication platform and blog using ASP.NET</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background: #9575cd;">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Festival Event Registration</h3>
+                        <p class="date">Jan 2012 - Mar 2012</p>
+                        <p>Designed registration forms for a festival event site using HTML</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background: #b39ddb;">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Campus Savings Account System</h3>
+                        <p class="date">Jun 2013 - Oct 2013</p>
+                        <p>Developed a campus savings account system with communication features using PHP</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background: #d1c4e9;">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Vehicle Detection System</h3>
+                        <p class="date">Aug 2014 - Oct 2014</p>
+                        <p>Built a Java-based vehicle detection system for outdoor environments under complex conditions</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background: #ede7f6;">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Identity-Based Encryption System</h3>
+                        <p class="date">Jan 2016 - Jun 2016</p>
+                        <p>Developed an encryption system using Identity-Based Encryption to manage lost private keys with Java</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>+91 9778188696</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>aleeshaunnikrishnan@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Emakulam, Kerala, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Passport</h3>
+                            <p>S2904633 (Expiry: 22/05/2028)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/aleeshaunnikrishnan" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/alishaunni" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/919778188696" class="social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/alisharundev" class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <p class="copyright">© 2023 Alisha Unni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+       
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+    </script>
